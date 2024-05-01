@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { finalize } from 'rxjs';
 import { LoginRequest } from 'src/app/api/login/models/request/login-request';
@@ -15,9 +16,10 @@ export class LoginComponent implements OnInit {
   request: LoginRequest = new LoginRequest();
 
   constructor(
+    private readonly router: Router,
     private readonly formBuilder: FormBuilder,
     private readonly loginService: LoginService,
-    private spinner: NgxSpinnerService
+    private readonly spinner: NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
@@ -47,4 +49,9 @@ export class LoginComponent implements OnInit {
         next: (response) => console.log(response),
       });
   }
+
+  mudarTela() : void{
+    this.router.navigate(['/esqueci-senha']);
+  }
+  
 }
