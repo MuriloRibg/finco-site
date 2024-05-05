@@ -3,26 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
-import { EsqueciSenhaComponent } from './esqueci-senha/esqueci-senha.component';
-import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { VerificacaoComponent } from './verificacao/verificacao.component';
-import { CriarSenhaComponent } from './criar-senha/criar-senha.component';
+import { VerificacaoModule } from 'src/app/verificacao/verificacao.module';
+import { CriarSenhaModule } from 'src/app/criar-senha/criar-senha.module';
+import { EsqueciSenhaModule } from 'src/app/esqueci-senha/esqueci-senha.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    EsqueciSenhaComponent,
-    VerificacaoComponent,
-    CriarSenhaComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     LoginModule,
-    RouterModule.forRoot([]),
+    VerificacaoModule,
+    CriarSenhaModule,
+    EsqueciSenhaModule,
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
