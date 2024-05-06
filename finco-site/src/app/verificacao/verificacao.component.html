@@ -1,42 +1,96 @@
-<div class="container-fluid" style="background-image: url(../../assets/fundoAtual.png);background-color: #f2f2f2; height: 100vh; align-content: center;">
-    <img src="../../assets/finco.png" style="height: 5rem; margin-left: 43.5%;" alt="">
-    <div class="mx-auto p-2" style="width: 29%;">
-        
-        <div style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px; padding-left: 20px; padding-right: 20px; border-radius: 16px;">
-           
-            <div class="mb-3">
-                  <div class="progress" role="progressbar" aria-label="Example 20px high" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="height: 8px">
-                    <div class="progress-bar bg-warning" style="width: 66.6%"></div>
-                  </div>
-            </div>
-            <div class="mb-3">
-                 <h1 style="font-size: 24px; ">Código de Verificação</h1>
-                 <p style="font-size: 16px; margin-bottom: 0;">Informe o código para a verificação do e-mail: </p>
-                 <p style="font-size: 16px; font-weight: 500;">email.com</p>
-                 
-            </div>
-          
-            <div class="pin-code" #pinContainer>
-                <input type="number" maxlength="1" autofocus>
-                <input type="number" maxlength="1">
-                <input type="number" maxlength="1">
-                <input type="number" maxlength="1">
-           </div>
-
-           <div class="mb-3" style="margin-top: 5%;">
-             <a style="text-decoration: none;"><span style="font-size: 16px; color: #453F3F; font-weight: 500; margin-left: 31%;">REENVIAR CÓDIGO</span></a>
-           </div> 
-
-           <div class="d-grid gap-2">
-            <button class="btn btn-warning" (click)="mudarTela()"style="color: #FFFFFF; font-weight: 500;" type="button">PRÓXIMO</button>
+<div
+  class="container-fluid"
+  style="
+    background-image: url(../../assets/fundoAtual.png);
+    background-color: #f2f2f2;
+    height: 100vh;
+    align-content: center;
+  "
+>
+  <img
+    src="../../assets/finco.png"
+    style="height: 5rem; margin-left: 43.5%"
+    alt=""
+  />
+  <div class="mx-auto p-2" style="width: 29%">
+    <div
+      style="
+        background-color: rgb(255, 255, 255);
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 16px;
+      "
+    >
+      <div class="mb-3">
+        <div
+          class="progress"
+          role="progressbar"
+          aria-label="Example 20px high"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="height: 8px"
+        >
+          <div class="progress-bar bg-warning" style="width: 66.6%"></div>
         </div>
+      </div>
+      <div class="mb-3">
+        <h1 style="font-size: 24px">Código de Verificação</h1>
+        <p style="font-size: 16px; margin-bottom: 0">
+          Informe o código para a verificação do e-mail:
+        </p>
+        <p style="font-size: 16px; font-weight: 500">email.com</p>
+      </div>
 
-            <div class="mb-3" style="margin-top: 5%;">
-                <a (click)="mudarTelaEsqueciSenha()" style="text-decoration: none; cursor: pointer;"><span style="font-size: 16px; color: #453F3F; font-weight: 500; margin-left: 42.5%;">VOLTAR</span></a>
-           </div> 
-          
-        </div>
+      <div class="pin-code" #pinContainer>
+        <input type="number" maxlength="1" autofocus />
+        <input type="number" maxlength="1" />
+        <input type="number" maxlength="1" />
+        <input type="number" maxlength="1" />
+      </div>
+
+      <div class="mb-3" style="margin-top: 5%">
+        <a style="text-decoration: none"
+          ><span
+            style="
+              font-size: 16px;
+              color: #453f3f;
+              font-weight: 500;
+              margin-left: 31%;
+            "
+            >REENVIAR CÓDIGO</span
+          ></a
+        >
+      </div>
+
+      <div class="d-grid gap-2">
+        <button
+          class="btn btn-warning"
+          (click)="mudarTela()"
+          style="color: #ffffff; font-weight: 500"
+          type="button"
+        >
+          PRÓXIMO
+        </button>
+      </div>
+
+      <div class="mb-3" style="margin-top: 5%">
+        <a
+          (click)="mudarTelaEsqueciSenha()"
+          style="text-decoration: none; cursor: pointer"
+          ><span
+            style="
+              font-size: 16px;
+              color: #453f3f;
+              font-weight: 500;
+              margin-left: 42.5%;
+            "
+            >VOLTAR</span
+          ></a
+        >
+      </div>
     </div>
-        
-</div>  
-
+  </div>
+</div>
