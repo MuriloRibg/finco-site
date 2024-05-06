@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { VerificacaoComponent } from './verificacao/verificacao.component';
 import { CriarSenhaComponent } from './criar-senha/criar-senha.component';
+import { CertoComponent } from './certo/certo.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     EsqueciSenhaComponent,
     VerificacaoComponent,
     CriarSenhaComponent,
+    CertoComponent,
   ],
   imports: [
     BrowserModule,
