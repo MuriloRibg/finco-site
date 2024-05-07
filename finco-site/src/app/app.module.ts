@@ -10,14 +10,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { VerificacaoModule } from 'src/app/verificacao/verificacao.module';
 import { CriarSenhaModule } from 'src/app/criar-senha/criar-senha.module';
 import { EsqueciSenhaModule } from 'src/app/esqueci-senha/esqueci-senha.module';
+import { CriarContaComponent } from './criar-conta/criar-conta.component';
 
-const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'esqueci-senha', component: EsqueciSenhaComponent },
-];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CriarContaComponent],
   imports: [
     BrowserModule,
     LoginModule,
