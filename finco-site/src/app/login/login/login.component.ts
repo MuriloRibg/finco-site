@@ -1,8 +1,8 @@
-import { TokenService } from "../core/token/token.service";
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from "ngx-toastr";
 import { finalize } from "rxjs";
 import { LoginRequest } from "src/app/api/login/models/request/login-request";
 import { LoginService } from "src/app/api/login/service/login.service";
@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
     private readonly router: Router,
     private readonly formBuilder: FormBuilder,
     private readonly loginService: LoginService,
-    private readonly tokenService: TokenService,
-    private readonly spinner: NgxSpinnerService
+    private readonly spinner: NgxSpinnerService,
+    private readonly toastrService: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -47,8 +47,11 @@ export class LoginComponent implements OnInit {
       .login(this.request)
       .pipe(finalize(() => this.spinner.hide()))
       .subscribe({
-        next: resp => console.log("sucesso"),
-        error: e => console.log(e)
+        next: (resp) => {
+          this.toastrService.success("Login realizado com sucesso!", "Sucesso!");
+          this.router.navigate(["/home"]);
+        },
+        error: e => this.toastrService.error(e.error)
       });
   }
 

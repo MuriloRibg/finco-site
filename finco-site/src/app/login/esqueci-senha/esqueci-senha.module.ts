@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EsqueciSenhaComponent } from 'src/app/esqueci-senha/esqueci-senha.component';
+import { EsqueciSenhaComponent } from 'src/app/login/esqueci-senha/esqueci-senha.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({

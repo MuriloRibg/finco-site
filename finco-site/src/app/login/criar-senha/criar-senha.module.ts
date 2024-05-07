@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { VerificacaoComponent } from 'src/app/verificacao/verificacao.component';
+import { CriarSenhaComponent } from 'src/app/login/criar-senha/criar-senha.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [VerificacaoComponent],
+  declarations: [CriarSenhaComponent],
   imports: [CommonModule, RouterModule.forRoot([])],
-  exports: [VerificacaoComponent],
+  exports: [CriarSenhaComponent],
 })
-export class VerificacaoModule {}
+export class CriarSenhaModule {}
