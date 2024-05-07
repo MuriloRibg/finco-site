@@ -3,8 +3,8 @@ import { HttpClient } from "@angular/common/http";
 import { Observable, tap } from "rxjs";
 
 import { environment } from "src/environments/environment";
-import { LoginRequest } from "src/app/api/login/models/request/login-request";
-import { LoginResponse } from "src/app/api/login/models/response/login-response";
+import { LoginRequest } from "src/app/api/usuario/models/request/login-request";
+import { LoginResponse } from "src/app/api/usuario/models/response/login-response";
 import { TokenService } from "src/app/core/token/token.service";
 
 @Injectable({
@@ -13,7 +13,10 @@ import { TokenService } from "src/app/core/token/token.service";
 export class LoginService {
   private readonly url = `${environment.api}/login`;
 
-  constructor(private readonly http: HttpClient, private readonly tokenService: TokenService) {}
+  constructor(
+    private readonly http: HttpClient, 
+    private readonly tokenService: TokenService) 
+    {}
 
   login(request: LoginRequest): Observable<LoginResponse> {
     return this.http
