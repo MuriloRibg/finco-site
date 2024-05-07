@@ -1,18 +1,17 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { EsqueciSenhaComponent } from "./esqueci-senha/esqueci-senha.component";
-import { LoginComponent } from "./login/login.component";
-import { VerificacaoComponent } from "./verificacao/verificacao.component";
-import { CriarSenhaComponent } from "./criar-senha/criar-senha.component";
-import { CertoComponent } from "./certo/certo.component";
-import { CriarContaComponent } from "./criar-conta/criar-conta.component";
-
+import { EsqueciSenhaComponent } from "./login/esqueci-senha/esqueci-senha.component";
+import { LoginComponent } from "./login/login/login.component";
+import { VerificacaoComponent } from "./login/verificacao/verificacao.component";
+import { CriarSenhaComponent } from "./login/criar-senha/criar-senha.component";
+import { CertoComponent } from "./login/certo/certo.component";
+import { CriarContaComponent } from "./login/criar-conta/criar-conta.component";
 
 const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "login",
+    redirectTo: "login"
   },
   {
     path: "login",
@@ -39,8 +38,7 @@ const routes: Routes = [
   {
     path: "criar-conta",
     component: CriarContaComponent
-  },
-  
+  }
 ];
 
 @NgModule({
