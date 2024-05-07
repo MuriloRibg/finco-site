@@ -6,6 +6,13 @@
     height: 100vh;
     align-content: center;
   "
+  class="container-fluid"
+  style="
+    background-image: url(../../assets/fundoAtual.png);
+    background-color: #f2f2f2;
+    height: 100vh;
+    align-content: center;
+  "
 >
   <img src="../../assets/finco.png" style="height: 5rem; margin-left: 43.5%" alt="" />
   <div class="mx-auto p-2" style="width: 29%">
@@ -38,6 +45,7 @@
       </div>
 
       <form [formGroup]="form" (submit)="resetarSenha()">
+        
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Nova senha</label>
           <input
@@ -89,9 +97,27 @@
             </div>
           </div>
         </div>
+            <div style="display: flex">
+              <img src="../../assets/done.svg" alt="done" style="width: 24px; height: 24px" />
+              <div class="col-6 col-sm-4" style="color: #0fca43">8 dígitos</div>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom: 4%">
+            <div style="display: flex; margin-bottom: 4%">
+              <img src="../../assets/done.svg" alt="done" style="width: 24px; height: 24px" />
+              <div class="col-6 col-sm-4" style="color: #0fca43">8 dígitos</div>
+            </div>
+            <div style="display: flex">
+              <img src="../../assets/done.svg" alt="done" style="width: 24px; height: 24px" />
+              <div class="col-6 col-sm-4" style="color: #0fca43">8 dígitos</div>
+            </div>
+          </div>
+        </div>
 
         <div class="d-grid gap-2">
-          <button class="btn btn-warning" style="color: #ffffff; font-weight: 500" type="submit">CONFIRMAR</button>
+          <button (click)="mudarCerto()" class="btn btn-warning" style="color: #ffffff; font-weight: 500" type="button">
+            CONFIRMAR
+          </button>
         </div>
       </form>
       <div class="mb-3" style="margin-top: 5%">
@@ -102,6 +128,7 @@
     </div>
   </div>
 </div>
+
 
 <ngx-spinner bdColor="rgba(225,225,225,0.8)" size="medium" color="#01616a" type="ball-circus" [fullScreen]="true"
   ><div class="text-center">

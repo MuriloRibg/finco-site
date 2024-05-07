@@ -6,8 +6,19 @@ import { RecoverService } from "src/app/api/usuario/service/recorver.service";
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from "ngx-toastr";
 import { finalize } from "rxjs";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { ResetarSenhaRequest } from "src/app/api/usuario/models/request/resetar-senha-request";
+import { RecoverService } from "src/app/api/usuario/service/recorver.service";
+import { NgxSpinnerService } from "ngx-spinner";
+import { ToastrService } from "ngx-toastr";
+import { finalize } from "rxjs";
 
 @Component({
+  selector: "app-criar-senha",
+  templateUrl: "./criar-senha.component.html",
+  styleUrls: ["./criar-senha.component.css"]
   selector: "app-criar-senha",
   templateUrl: "./criar-senha.component.html",
   styleUrls: ["./criar-senha.component.css"]
@@ -39,11 +50,11 @@ export class CriarSenhaComponent implements OnInit {
 
   resetarSenha(): void {
     this.ngxSpinnerService.show();
-    let codigo = window.localStorage.getItem("pin") ?? "";
+    let codigo = window.localStorage.getItem("pin");
     let email = window.localStorage.getItem("email");
     let password = this.form.get("password")?.value;
 
-    this.request.Code = parseInt(codigo);
+    this.request.Code = codigo;
     this.request.Email = email;
     this.request.Password = password;
 
@@ -56,7 +67,6 @@ export class CriarSenhaComponent implements OnInit {
       )
       .subscribe({
         next: resp => {
-          console.log(resp)
           this.mudarCerto();
         },
         error: e => this.toastrService.error(e.error)
@@ -80,6 +90,8 @@ export class CriarSenhaComponent implements OnInit {
     this.router.navigate(["/verificacao"]);
   }
 
+  mudarCerto(): void {
+    this.router.navigate(["/certo"]);
   mudarCerto(): void {
     this.router.navigate(["/certo"]);
   }
