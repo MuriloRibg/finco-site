@@ -7,11 +7,7 @@
     align-content: center;
   "
 >
-  <img
-    src="../../assets/finco.png"
-    style="height: 5rem; margin-left: 43.5%"
-    alt=""
-  />
+  <img src="../../assets/finco.png" style="height: 5rem; margin-left: 43.5%" alt="" />
   <div class="mx-auto p-2" style="width: 29%">
     <div
       style="
@@ -38,57 +34,34 @@
       </div>
       <div class="mb-3">
         <h1 style="font-size: 24px">Código de Verificação</h1>
-        <p style="font-size: 16px; margin-bottom: 0">
-          Informe o código para a verificação do e-mail:
-        </p>
-        <p style="font-size: 16px; font-weight: 500">email.com</p>
+        <p style="font-size: 16px; margin-bottom: 0">Informe o código para a verificação do e-mail:</p>
+        <p style="font-size: 16px; font-weight: 500">{{email}}</p>
       </div>
 
-      <div class="pin-code" #pinContainer>
-        <input type="number" maxlength="1" autofocus />
-        <input type="number" maxlength="1" />
-        <input type="number" maxlength="1" />
-        <input type="number" maxlength="1" />
-      </div>
-
-      <div class="mb-3" style="margin-top: 5%">
-        <a style="text-decoration: none"
-          ><span
-            style="
-              font-size: 16px;
-              color: #453f3f;
-              font-weight: 500;
-              margin-left: 31%;
-            "
-            >REENVIAR CÓDIGO</span
-          ></a
-        >
-      </div>
-
-      <div class="d-grid gap-2">
-        <button
-          class="btn btn-warning"
-          (click)="mudarTela()"
-          style="color: #ffffff; font-weight: 500"
-          type="button"
-        >
-          PRÓXIMO
-        </button>
-      </div>
+      <form [formGroup]="formCodigo" (submit)="salvarCodigo()">
+        <div class="pin-code" #pinContainer>
+          <input type="number" maxlength="1" formControlName="primeiroNumero" autofocus/>
+          <input type="number" maxlength="1" formControlName="segundoNumero"/>
+          <input type="number" maxlength="1" formControlName="terceiroNumero"/>
+          <input type="number" maxlength="1" formControlName="quartoNumero"/>
+        </div>
+        
+        <div class="mb-3" style="margin-top: 5%">
+          <a style="text-decoration: none"
+          ><span style="font-size: 16px; color: #453f3f; font-weight: 500; margin-left: 31%">REENVIAR CÓDIGO</span></a
+          >
+        </div>
+        
+        <div class="d-grid gap-2">
+          <button class="btn btn-warning" style="color: #ffffff; font-weight: 500" type="submit">
+            PRÓXIMO
+          </button>
+        </div>
+      </form>
 
       <div class="mb-3" style="margin-top: 5%">
-        <a
-          (click)="mudarTelaEsqueciSenha()"
-          style="text-decoration: none; cursor: pointer"
-          ><span
-            style="
-              font-size: 16px;
-              color: #453f3f;
-              font-weight: 500;
-              margin-left: 42.5%;
-            "
-            >VOLTAR</span
-          ></a
+        <a (click)="mudarTelaEsqueciSenha()" style="text-decoration: none; cursor: pointer"
+          ><span style="font-size: 16px; color: #453f3f; font-weight: 500; margin-left: 42.5%">VOLTAR</span></a
         >
       </div>
     </div>

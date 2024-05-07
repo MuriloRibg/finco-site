@@ -4,8 +4,8 @@ import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from "ngx-toastr";
 import { finalize } from "rxjs";
-import { LoginRequest } from "src/app/api/login/models/request/login-request";
-import { LoginService } from "src/app/api/login/service/login.service";
+import { LoginRequest } from "src/app/api/usuario/models/request/login-request";
+import { LoginService } from "src/app/api/usuario/service/login.service";
 
 @Component({
   selector: "app-login",
@@ -40,8 +40,8 @@ export class LoginComponent implements OnInit {
 
     const userName = this.formLogin.get("userName")?.value;
     const password = this.formLogin.get("password")?.value;
-    this.request.user = userName;
-    this.request.password = password;
+    this.request.User = userName;
+    this.request.Password = password;
 
     this.loginService
       .login(this.request)

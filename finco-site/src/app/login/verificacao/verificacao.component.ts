@@ -1,3 +1,4 @@
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,13 +8,43 @@ import { Router } from '@angular/router';
   styleUrls: ['./verificacao.component.css']
 })
 export class VerificacaoComponent {
+  formCodigo!: FormGroup;
+  email?: string | null | undefined;
 
   @ViewChild('pinContainer') pinContainer!: ElementRef;
 
-  constructor(private router: Router) { }
+  constructor(
+    private readonly router: Router,
+    private readonly formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
-    console.log('There is ' + this.pinContainer.nativeElement.length + ' Pin Container on the page.');
+    this.iniciarFormulario();
+    this.iniciarPinContainer();
+    this.email = window.localStorage.getItem("email");
+  }
+
+  iniciarFormulario(): void {
+    this.formCodigo = this.formBuilder.group({
+      primeiroNumero: [null, Validators.required],
+      segundoNumero: [null, Validators.required],
+      terceiroNumero: [null, Validators.required],
+      quartoNumero: [null, Validators.required]
+    })
+  }
+
+  salvarCodigo(): void {
+    let primeiroNumero = this.formCodigo.get("primeiroNumero")?.value;
+    let segundoNumero = this.formCodigo.get("segundoNumero")?.value;
+    let terceiroNumero = this.formCodigo.get("terceiroNumero")?.value;
+    let quartoNumero = this.formCodigo.get("quartoNumero")?.value;
+
+    let codigo = `${primeiroNumero}${segundoNumero}${terceiroNumero}${quartoNumero}`;
+    window.localStorage.setItem("pin", codigo);
+    this.mudarTela();
+  }
+
+  private iniciarPinContainer() {
 
     this.pinContainer.nativeElement.addEventListener('keyup', (event: KeyboardEvent) => {
       const target = event.target as HTMLInputElement;
@@ -49,8 +80,6 @@ export class VerificacaoComponent {
       target.value = "";
     });
   }
-
-  
 
   mudarTela() : void{
     this.router.navigate(['/criar-senha']);
