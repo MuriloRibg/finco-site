@@ -38,7 +38,6 @@
       </div>
 
       <form [formGroup]="form" (submit)="resetarSenha()">
-        
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Nova senha</label>
           <input
@@ -92,9 +91,7 @@
         </div>
 
         <div class="d-grid gap-2">
-          <button (click)="mudarCerto()" class="btn btn-warning" style="color: #ffffff; font-weight: 500" type="button">
-            CONFIRMAR
-          </button>
+          <button class="btn btn-warning" style="color: #ffffff; font-weight: 500" type="submit">CONFIRMAR</button>
         </div>
       </form>
       <div class="mb-3" style="margin-top: 5%">
@@ -105,7 +102,6 @@
     </div>
   </div>
 </div>
-
 
 <ngx-spinner bdColor="rgba(225,225,225,0.8)" size="medium" color="#01616a" type="ball-circus" [fullScreen]="true"
   ><div class="text-center">

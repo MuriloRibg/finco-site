@@ -39,11 +39,11 @@ export class CriarSenhaComponent implements OnInit {
 
   resetarSenha(): void {
     this.ngxSpinnerService.show();
-    let codigo = window.localStorage.getItem("pin");
+    let codigo = window.localStorage.getItem("pin") ?? "";
     let email = window.localStorage.getItem("email");
     let password = this.form.get("password")?.value;
 
-    this.request.Code = codigo;
+    this.request.Code = parseInt(codigo);
     this.request.Email = email;
     this.request.Password = password;
 
@@ -56,6 +56,7 @@ export class CriarSenhaComponent implements OnInit {
       )
       .subscribe({
         next: resp => {
+          console.log(resp)
           this.mudarCerto();
         },
         error: e => this.toastrService.error(e.error)
