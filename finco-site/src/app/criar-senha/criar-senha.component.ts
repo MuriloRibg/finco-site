@@ -12,4 +12,8 @@ export class CriarSenhaComponent {
   mudarTelaVerificacao() : void{
     this.router.navigate(['/verificacao']);
   }
+
+  mudarCerto() : void{
+    this.router.navigate(['/certo']);
+  }
 }

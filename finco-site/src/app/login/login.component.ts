@@ -55,4 +55,8 @@ export class LoginComponent implements OnInit {
   mudarTela(): void {
     this.router.navigate(["/esqueci-senha"]);
   }
+
+  mudarTelaCriarConta(): void {
+    this.router.navigate(["/criar-conta"]);
+  }
 }

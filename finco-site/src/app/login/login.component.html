@@ -153,7 +153,7 @@
 
         <div class="mb-3" style="margin-top: 10px">
           <span style="margin-right: 3px">Não possui conta?</span
-          ><a href="" style="text-decoration: none"
+          ><a (click)="mudarTelaCriarConta()" style="text-decoration: none" 
             ><span style="font-size: 16px; color: #ed8812; font-weight: 500"
               >Clique aqui para criar uma conta.</span
             ></a
@@ -161,8 +161,9 @@
         </div>
       </form>
     </div>
-  </div>
-</div>
+        
+</div>   
+
 
 <ngx-spinner
   bdColor="rgba(225,225,225,0.8)"

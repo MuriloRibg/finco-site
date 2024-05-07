@@ -4,6 +4,8 @@ import { EsqueciSenhaComponent } from "./esqueci-senha/esqueci-senha.component";
 import { LoginComponent } from "./login/login.component";
 import { VerificacaoComponent } from "./verificacao/verificacao.component";
 import { CriarSenhaComponent } from "./criar-senha/criar-senha.component";
+import { CertoComponent } from "./certo/certo.component";
+import { CriarContaComponent } from "./criar-conta/criar-conta.component";
 
 
 const routes: Routes = [
@@ -30,7 +32,14 @@ const routes: Routes = [
     path: "criar-senha",
     component: CriarSenhaComponent
   },
-  
+  {
+    path: "certo",
+    component: CertoComponent
+  },
+  {
+    path: "criar-conta",
+    component: CriarContaComponent
+  },
   
 ];
 
