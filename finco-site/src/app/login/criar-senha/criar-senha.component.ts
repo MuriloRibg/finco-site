@@ -7,6 +7,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from "ngx-toastr";
 import { finalize } from "rxjs";
 
+
 @Component({
   selector: "app-criar-senha",
   templateUrl: "./criar-senha.component.html",
@@ -43,7 +44,7 @@ export class CriarSenhaComponent implements OnInit {
     let email = window.localStorage.getItem("email");
     let password = this.form.get("password")?.value;
 
-    this.request.Code = codigo;
+    this.request.Code = parseInt(codigo);
     this.request.Email = email;
     this.request.Password = password;
 
