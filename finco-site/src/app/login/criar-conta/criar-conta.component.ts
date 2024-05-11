@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { RegisterService } from "src/app/api/usuario/service/register.service";
 import { RegisterRequest } from "src/app/api/usuario/models/request/register-request";
-import { finalize, timeInterval } from "rxjs";
+import { finalize } from "rxjs";
 import { ToastrService } from "ngx-toastr";
 
 @Component({
