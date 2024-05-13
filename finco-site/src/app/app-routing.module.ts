@@ -6,6 +6,10 @@ import { VerificacaoComponent } from "./login/verificacao/verificacao.component"
 import { CriarSenhaComponent } from "./login/criar-senha/criar-senha.component";
 import { CertoComponent } from "./login/certo/certo.component";
 import { CriarContaComponent } from "./login/criar-conta/criar-conta.component";
+import { HomeComponent } from "./home/home.component";
+import { CriarProjetoComponent } from "./home/criar-projeto/criar-projeto.component";
+import { SubcategoriaComponent } from "./home/subcategoria/subcategoria.component";
+import { LocalProjetoComponent } from "./home/local-projeto/local-projeto.component";
 
 const routes: Routes = [
   {
@@ -38,7 +42,26 @@ const routes: Routes = [
   {
     path: "criar-conta",
     component: CriarContaComponent
+  },
+
+  {
+    path: "criarProjeto",
+    component: CriarProjetoComponent
+  },
+
+  {
+    path: "home",
+    component: HomeComponent
+  },
+  {
+    path: "subcategoria",
+    component: SubcategoriaComponent
+  },
+  {
+    path: "localProjeto",
+    component: LocalProjetoComponent
   }
+
 ];
 
 @NgModule({

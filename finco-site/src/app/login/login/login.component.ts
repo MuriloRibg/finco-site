@@ -53,6 +53,8 @@ export class LoginComponent implements OnInit {
         },
         error: e => this.toastrService.error(e.error)
       });
+
+      this.router.navigate(["/home"]);
   }
 
   mudarTela(): void {

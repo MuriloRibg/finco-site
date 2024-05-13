@@ -7,15 +7,16 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from "ngx-toastr";
 import { finalize } from "rxjs";
 
+
 @Component({
   selector: "app-criar-senha",
   templateUrl: "./criar-senha.component.html",
   styleUrls: ["./criar-senha.component.css"]
+
 })
 export class CriarSenhaComponent implements OnInit {
   form!: FormGroup;
   request: ResetarSenhaRequest = new ResetarSenhaRequest();
-
   constructor(
     private readonly router: Router,
     private readonly formBuilder: FormBuilder,
