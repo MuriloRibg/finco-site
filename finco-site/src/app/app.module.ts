@@ -12,9 +12,10 @@ import { HomeComponent } from './home/home.component';
 import { CriarProjetoComponent } from './home/criar-projeto/criar-projeto.component';
 import { SubcategoriaComponent } from './home/subcategoria/subcategoria.component';
 import { LocalProjetoComponent } from './home/local-projeto/local-projeto.component';
+import { ProjetoComponent } from './home/projeto/projeto.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CriarProjetoComponent, SubcategoriaComponent, LocalProjetoComponent],
+  declarations: [AppComponent, HomeComponent, CriarProjetoComponent, SubcategoriaComponent, LocalProjetoComponent, ProjetoComponent],
   imports: [
     BrowserModule,
     LoginModule,

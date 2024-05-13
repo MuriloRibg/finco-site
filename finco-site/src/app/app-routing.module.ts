@@ -10,6 +10,7 @@ import { HomeComponent } from "./home/home.component";
 import { CriarProjetoComponent } from "./home/criar-projeto/criar-projeto.component";
 import { SubcategoriaComponent } from "./home/subcategoria/subcategoria.component";
 import { LocalProjetoComponent } from "./home/local-projeto/local-projeto.component";
+import { ProjetoComponent } from "./home/projeto/projeto.component";
 
 const routes: Routes = [
   {
@@ -60,7 +61,12 @@ const routes: Routes = [
   {
     path: "localProjeto",
     component: LocalProjetoComponent
-  }
+  },
+  {
+    path: "projeto",
+    component: ProjetoComponent
+  },
+
 
 ];
 
