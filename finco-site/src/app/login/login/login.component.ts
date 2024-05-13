@@ -36,23 +36,25 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    this.spinner.show();
+    // this.spinner.show();
 
-    const userName = this.formLogin.get("userName")?.value;
-    const password = this.formLogin.get("password")?.value;
-    this.request.User = userName;
-    this.request.Password = password;
+    // const userName = this.formLogin.get("userName")?.value;
+    // const password = this.formLogin.get("password")?.value;
+    // this.request.User = userName;
+    // this.request.Password = password;
 
-    this.loginService
-      .login(this.request)
-      .pipe(finalize(() => this.spinner.hide()))
-      .subscribe({
-        next: (resp) => {
-          this.toastrService.success("Login realizado com sucesso!", "Sucesso!");
-          this.router.navigate(["/home"]);
-        },
-        error: e => this.toastrService.error(e.error)
-      });
+    // this.loginService
+    //   .login(this.request)
+    //   .pipe(finalize(() => this.spinner.hide()))
+    //   .subscribe({
+    //     next: (resp) => {
+    //       this.toastrService.success("Login realizado com sucesso!", "Sucesso!");
+    //       this.router.navigate(["/home"]);
+    //     },
+    //     error: e => this.toastrService.error(e.error)
+    //   });
+
+      this.router.navigate(["/home"]);
   }
 
   mudarTela(): void {

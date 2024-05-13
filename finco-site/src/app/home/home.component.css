@@ -1,0 +1,22 @@
+.profile {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .profile img {
+    width: 100px; /* ajuste conforme necessário */
+    height: 100px; /* ajuste conforme necessário */
+    border-radius: 50%; /* para tornar a imagem redonda */
+  }
+  
+  .status-dot {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 15px; /* tamanho do círculo */
+    height: 15px; /* tamanho do círculo */
+    background-color: green; /* ou outra cor para indicar online */
+    border-radius: 50%; /* para tornar o círculo */
+    border: 2px solid white; /* para dar um contorno branco ao círculo */
+  }
+  
