@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-local-projeto',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./local-projeto.component.css']
 })
 export class LocalProjetoComponent {
+  constructor(private readonly router: Router){}
 
+  mudarTela(): void {
+    this.router.navigate(["/subcategoria"]);
+  }
+
+  mudarProjeto(): void {
+    this.router.navigate(["/projeto"]);
+  }
 }
