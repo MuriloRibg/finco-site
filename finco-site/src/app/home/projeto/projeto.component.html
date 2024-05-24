@@ -1,241 +1,309 @@
-
-<nav class="navbar" style="background-color: #ffffff;">
-    <div class="container-fluid">
-      <a class="navbar-brand"><img style="width: 100px; margin-left: 70%;" src="../../assets/finco.png"/></a>
-      <form class="d-flex" role="search">
-  
-        <div class="row">
-  
-          <div class="col">
-  
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 600px;">
-  
-          </div>
-  
-          <div class="col">
-  
-            <button class="btn btn-warning text-white" type="submit" style="background-color: #FE9923; font-size: 16px; text-wrap:nowrap;">COMEÇAR UM PROJETO</button>
-  
-          </div>
-  
-          <div class="col">
-  
-            <div class="profile">
-              <img src="../../assets/perfil.png" style="width: 38px; height: 38px;" alt="Perfil do usuário">
-              <div class="status-dot"></div>
-            </div>
-  
-          </div>
-  
+<nav class="navbar" style="background-color: #ffffff">
+  <div class="container-fluid">
+    <a class="navbar-brand"><img style="width: 100px; margin-left: 70%" src="../../assets/finco.png" /></a>
+    <form class="d-flex" role="search">
+      <div class="row">
+        <div class="col">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+            style="width: 600px"
+          />
         </div>
-      </form> 
-    </div>
+
+        <div class="col">
+          <button
+            class="btn btn-warning text-white"
+            type="submit"
+            style="background-color: #fe9923; font-size: 16px; text-wrap: nowrap"
+          >
+            COMEÇAR UM PROJETO
+          </button>
+        </div>
+
+        <div class="col">
+          <div class="profile">
+            <img src="../../assets/perfil.png" style="width: 38px; height: 38px" alt="Perfil do usuário" />
+            <div class="status-dot"></div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </nav>
 
-<div style="background-color: #F9F9F9; padding-bottom: 150px;" >
-    <div class="row" style="margin: 0; padding-top: 30px; padding-bottom: 30px;">
-        <ul class="nav nav-underline justify-content-center text-center "> 
-            <div class="col-2"> 
-                <li class="nav-item">
-                <a class="nav-link  active text-black" aria-current="page">Fundamentos</a>
-              </li>
-            </div>
-    
-            <div class="col-2">
-                <li class="nav-item">
-                    <a class="nav-link text-black">Recompensas</a>
-                  </li>
-            </div>
-            <div class="col-2">
-                <li class="nav-item">
-                    <a class="nav-link text-black">Pessoas</a>
-                  </li>
-            </div>
-            <div class="col-2">
-                <li class="nav-item">
-                    <a class="nav-link  text-black">Pagamentos</a>
-                  </li>
-            </div>
-    
-          </ul>
+<div style="background-color: #f9f9f9; padding-bottom: 150px">
+  <div class="row" style="margin: 0; padding-top: 30px; padding-bottom: 30px">
+    <ul class="nav nav-underline justify-content-center text-center">
+      <div class="col-2">
+        <li class="nav-item">
+          <a class="nav-link active text-black" aria-current="page">Fundamentos</a>
+        </li>
+      </div>
+
+      <div class="col-2">
+        <li class="nav-item">
+          <a class="nav-link text-black">Recompensas</a>
+        </li>
+      </div>
+      <div class="col-2">
+        <li class="nav-item">
+          <a class="nav-link text-black">Pessoas</a>
+        </li>
+      </div>
+      <div class="col-2">
+        <li class="nav-item">
+          <a class="nav-link text-black">Pagamentos</a>
+        </li>
+      </div>
+    </ul>
+  </div>
+  <div class="mx-auto p-2" style="width: 80%; background-color: #ffffff; border-radius: 16px">
+    <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px">
+      <h3 style="margin-bottom: 10px">Título do projeto</h3>
+      <p style="margin-bottom: 10px">
+        Escreva um título e um subtítulo breves e claros para ajudar as pessoas a entenderem rapidamente o seu projeto.
+        Ambos aparecerão nas páginas do seu projeto e de pré-lançamento.
+      </p>
+      <p style="margin-bottom: 10px">
+        Apoiadores em potencial também os verão se o seu projeto aparecer nas páginas de categorias, resultados de
+        pesquisa ou em e-mails que enviamos para nossa comunidade.
+      </p>
     </div>
-    <div class="mx-auto p-2" style="width: 80%; background-color: #ffffff; border-radius: 16px;">
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px;">
-            <h3 style="margin-bottom: 10px;">Título do projeto</h3>
-            <p style="margin-bottom: 10px;">Escreva um título e um subtítulo breves e claros para ajudar as pessoas a entenderem rapidamente o seu projeto. Ambos aparecerão nas páginas do seu projeto e de pré-lançamento.</p>
-            <p style="margin-bottom: 10px;">Apoiadores em potencial também os verão se o seu projeto aparecer nas páginas de categorias, resultados de pesquisa ou em e-mails que enviamos para nossa comunidade.</p>
-        </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px;">
-            <div class="mb-3">
-                <label for="titulo" class="form-label">Título</label>
-                <input type="text" class="form-control" id="titulo" placeholder="Escreva um título">
-              </div>
-              <div class="mb-3">
-                <label for="legenda" class="form-label">Legenda</label>
-                <textarea class="form-control" id="legenda" rows="3"></textarea>
-              </div>
+    <form [formGroup]="form" (submit)="enviar()">
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px">
+        <div class="mb-3">
+          <label for="titulo" class="form-label">Título</label>
+          <input
+            type="text"
+            class="form-control"
+            id="titulo"
+            placeholder="Escreva um título"
+            formControlName="Titulo"
+          />
         </div>
+        <div class="mb-3">
+          <label for="legenda" class="form-label">Legenda</label>
+          <textarea class="form-control" id="legenda" rows="3" formControlName="Legenda"></textarea>
+        </div>
+      </div>
 
-        <div class="row justify-content-center">
-            <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 15px; margin-right: 7px"></div>
-        </div>
+      <div class="row justify-content-center">
+        <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 15px; margin-right: 7px"></div>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <h3 style="margin-bottom: 10px;">Categoria do projeto</h3>
-            <p style="margin-bottom: 10px;">Escolha uma categoria e subcategoria primária para ajudar os patrocinadores a encontrar seu projeto.</p>
-            <p style="margin-bottom: 10px;">Sua segunda subcategoria nos ajudará a fornecer orientações mais relevantes para o seu projeto. </p>
-        </div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <h3 style="margin-bottom: 10px">Categoria do projeto</h3>
+        <p style="margin-bottom: 10px">
+          Escolha uma categoria e subcategoria primária para ajudar os patrocinadores a encontrar seu projeto.
+        </p>
+        <p style="margin-bottom: 10px">
+          Sua segunda subcategoria nos ajudará a fornecer orientações mais relevantes para o seu projeto.
+        </p>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <div class="col-6">
-             <label for="categoriaP" style="margin-bottom: 10px;">Categoria Primária</label>
-             <select id="categoriaP" class="form-select" aria-label="Default select example" >
-               <option selected >Selecione</option>
-               <option value="1">Tecnologia</option>
-             </select>
-            </div>
-            <div class="col-6">
-             <label for="subcategoriaP" style="margin-bottom: 10px;">Subcategoria Primária </label>
-             <select id="subcategoriaP" class="form-select" aria-label="Default select example">
-               <option selected >Selecione</option>
-               <option value="1">Software</option>
-               <option value="2">Aplicativos</option>
-             </select>
-            </div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-6">
+          <label for="categoriaP" style="margin-bottom: 10px">Categoria Primária</label>
+          <select id="categoriaP" class="form-select" aria-label="Default select example" formControlName="Categoria">
+            <option selected>Selecione</option>
+            <option value="Tecnologia">Tecnologia</option>
+          </select>
         </div>
+        <div class="col-6">
+          <label for="subcategoriaP" style="margin-bottom: 10px">Subcategoria Primária </label>
+          <select
+            id="subcategoriaP"
+            class="form-select"
+            aria-label="Default select example"
+            formControlName="Subcategoria"
+          >
+            <option selected>Selecione</option>
+            <option value="Software">Software</option>
+            <option value="Aplicativos">Aplicativos</option>
+          </select>
+        </div>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <div class="col-6">
-             <label for="categoria" style="margin-bottom: 10px;">Categoria </label>
-             <select class="form-select" aria-label="Default select example" >
-               <option selected >Selecione</option>
-               <option  value="1">Tecnologia</option>
-             </select>
-            </div>
-            <div class="col-6">
-             <label for="subcategoria" style="margin-bottom: 10px;">Subcategoria</label>
-             <select class="form-select" aria-label="Default select example">
-               <option selected >Selecione</option>
-               <option value="1">Software</option>
-               <option value="2">Aplicativos</option>
-             </select>
-            </div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-6">
+          <label for="categoria" style="margin-bottom: 10px">Categoria</label>
+          <select class="form-select" aria-label="Default select example" formControlName="CategoriaSegundaria">
+            <option selected>Selecione</option>
+            <option value="Tecnologia">Tecnologia</option>
+          </select>
         </div>
+        <div class="col-6">
+          <label for="subcategoria" style="margin-bottom: 10px">Subcategoria</label>
+          <select class="form-select" aria-label="Default select example" formControlName="SubcategoriaSegundaria">
+            <option selected>Selecione</option>
+            <option value="Software">Software</option>
+            <option value="Aplicativos">Aplicativos</option>
+          </select>
+        </div>
+      </div>
 
-        <div class="row justify-content-center">
-            <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px;"></div>
-        </div>
+      <div class="row justify-content-center">
+        <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px"></div>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <h3 style="margin-bottom: 10px;">Localização do projeto</h3>
-            <p style="margin-bottom: 10px;">Insira o local que melhor descreve onde seu projeto está baseado.</p>
-        </div>
-        
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <div class="col-12">
-             <label for="local" style="margin-bottom: 10px;">Local</label>
-             <select id="local" class="form-select" aria-label="Default select example" >
-               <option selected >Selecione</option>
-               <option  value="1">Brasil</option>
-             </select>
-            </div>
-        </div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <h3 style="margin-bottom: 10px">Localização do projeto</h3>
+        <p style="margin-bottom: 10px">Insira o local que melhor descreve onde seu projeto está baseado.</p>
+      </div>
 
-        <div class="row justify-content-center">
-            <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px;"></div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-12">
+          <label for="local" style="margin-bottom: 10px">Local</label>
+          <select id="local" class="form-select" aria-label="Default select example" formControlName="Local">
+            <option selected>Selecione</option>
+            <option value="BR">Brasil</option>
+          </select>
         </div>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <h3 style="margin-bottom: 10px;">Imagem do projeto</h3>
-            <p style="margin-bottom: 10px;">Adicione uma imagem que represente claramente o seu projeto. Escolha um que fique bem em tamanhos diferentes – ele aparecerá na página do seu projeto, no site da Finco e nos aplicativos móveis e (quando compartilhado) em canais sociais.</p>
-            <p style="margin-bottom: 10px;">Sua imagem deve ter pelo menos 1024x576 pixels. Ele será cortado em uma proporção de 16:9.</p>
-            <p style="margin-bottom: 10px;">Evite imagens com banners, emblemas ou texto - eles são ilegíveis em tamanhos menores, podem ser penalizados pelo algoritmo do Facebook e diminuem suas chances de obter a página inicial da Finco e os recursos do boletim informativo.</p>
-        </div>
+      <div class="row justify-content-center">
+        <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px"></div>
+      </div>
 
-        <div class="row justify-content-center"  style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <div class="col-12" >
-                <input class="form-control form-control-lg" id="formFileLg" type="file">
-            </div>
-        </div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <h3 style="margin-bottom: 10px">Imagem do projeto</h3>
+        <p style="margin-bottom: 10px">
+          Adicione uma imagem que represente claramente o seu projeto. Escolha um que fique bem em tamanhos diferentes –
+          ele aparecerá na página do seu projeto, no site da Finco e nos aplicativos móveis e (quando compartilhado) em
+          canais sociais.
+        </p>
+        <p style="margin-bottom: 10px">
+          Sua imagem deve ter pelo menos 1024x576 pixels. Ele será cortado em uma proporção de 16:9.
+        </p>
+        <p style="margin-bottom: 10px">
+          Evite imagens com banners, emblemas ou texto - eles são ilegíveis em tamanhos menores, podem ser penalizados
+          pelo algoritmo do Facebook e diminuem suas chances de obter a página inicial da Finco e os recursos do boletim
+          informativo.
+        </p>
+      </div>
 
-        <div class="row justify-content-center">
-            <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px;"></div>
+      <div
+        class="row justify-content-center"
+        style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px"
+      >
+        <div class="col-12">
+          <input class="form-control form-control-lg" id="formFileLg" type="file" />
         </div>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <h3 style="margin-bottom: 10px;">Vídeo do projeto (opcional)</h3>
-            <p style="margin-bottom: 10px;">Adicione um vídeo que descreva seu projeto.</p>
-            <p style="margin-bottom: 10px;">Diga às pessoas para que você está arrecadando fundos, como planeja que isso aconteça, quem você é e por que se preocupa com este projeto.</p>
-            <p style="margin-bottom: 10px;">Depois de enviar seu vídeo, use nosso editor para adicionar legendas e legendas para que seu projeto fique mais acessível a todos.</p>
-        </div>
+      <div class="row justify-content-center">
+        <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px"></div>
+      </div>
 
-        <div class="row justify-content-center"  style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <div class="col-12" >
-                <input class="form-control form-control-lg" id="video" type="file">
-            </div>
-        </div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <h3 style="margin-bottom: 10px">Vídeo do projeto (opcional)</h3>
+        <p style="margin-bottom: 10px">Adicione um vídeo que descreva seu projeto.</p>
+        <p style="margin-bottom: 10px">
+          Diga às pessoas para que você está arrecadando fundos, como planeja que isso aconteça, quem você é e por que
+          se preocupa com este projeto.
+        </p>
+        <p style="margin-bottom: 10px">
+          Depois de enviar seu vídeo, use nosso editor para adicionar legendas e legendas para que seu projeto fique
+          mais acessível a todos.
+        </p>
+      </div>
 
-        <div class="row justify-content-center">
-            <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px;"></div>
+      <div
+        class="row justify-content-center"
+        style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px"
+      >
+        <div class="col-12">
+          <input class="form-control form-control-lg" id="video" type="file" />
         </div>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <h3 style="margin-bottom: 10px;">Meta de financiamento</h3>
-            <p style="margin-bottom: 10px;">Defina uma meta alcançável que cubra o que você precisa para concluir seu projeto.</p>
-            <p style="margin-bottom: 10px;">O financiamento é tudo ou nada. Se você não atingir sua meta, não receberá nenhum dinheiro.</p>
+      <div class="row justify-content-center">
+        <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px"></div>
+      </div>
 
-        </div>
-        
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <div class="col-6">
-                <div class="mb-3">
-                   <label for="meta" class="form-label">Valor da Meta</label>
-                   <input type="text" class="form-control" id="meta" placeholder="Valor">
-                 </div>
-               </div>
-        </div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <h3 style="margin-bottom: 10px">Meta de financiamento</h3>
+        <p style="margin-bottom: 10px">
+          Defina uma meta alcançável que cubra o que você precisa para concluir seu projeto.
+        </p>
+        <p style="margin-bottom: 10px">
+          O financiamento é tudo ou nada. Se você não atingir sua meta, não receberá nenhum dinheiro.
+        </p>
+      </div>
 
-        <div class="row justify-content-center">
-            <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px;"></div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="meta" class="form-label">Valor da Meta</label>
+            <input type="text" class="form-control" id="meta" placeholder="Valor" formControlName="Valor" />
+          </div>
         </div>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <h3 style="margin-bottom: 10px;">Data prevista de lançamento (opcional)</h3>
-            <p style="margin-bottom: 10px;">Forneceremos recomendações sobre quando concluir etapas que podem levar alguns dias para serem processadas. Você pode editar esta data até o momento do lançamento do seu projeto, o que deve ser feito sempre manualmente.</p>
-           
+      <div class="row justify-content-center">
+        <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px"></div>
+      </div>
 
-        </div>
-        
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <div class="col-6">
-                <div class="mb-3">
-                   <label for="data" class="form-label">Data</label>
-                   <input type="date" class="form-control" id="data">
-                 </div>
-               </div>
-        </div>
-        
-        <div class="row justify-content-center">
-            <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px;"></div>
-        </div>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <h3 style="margin-bottom: 10px">Data prevista de lançamento (opcional)</h3>
+        <p style="margin-bottom: 10px">
+          Forneceremos recomendações sobre quando concluir etapas que podem levar alguns dias para serem processadas.
+          Você pode editar esta data até o momento do lançamento do seu projeto, o que deve ser feito sempre
+          manualmente.
+        </p>
+      </div>
 
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <h3 style="margin-bottom: 10px;">Duração da campanha(opcional)</h3>
-            <p style="margin-bottom: 10px;">Defina um limite de tempo para sua campanha. Você não poderá alterar isso após o lançamento.</p>
-           
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="data" class="form-label">Data</label>
+            <input type="date" class="form-control" id="data" formControlName="DataLancamento" />
+          </div>
+        </div>
+      </div>
 
+      <div class="row justify-content-center">
+        <div style="width: 90%; height: 1px; background-color: #eeeeee; margin-top: 30px; margin-right: 7px"></div>
+      </div>
+
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <h3 style="margin-bottom: 10px">Duração da campanha(opcional)</h3>
+        <p style="margin-bottom: 10px">
+          Defina um limite de tempo para sua campanha. Você não poderá alterar isso após o lançamento.
+        </p>
+      </div>
+
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-6">
+          <div class="mb-3">
+            <label for="dataHora" class="form-label">Data e Hora</label>
+            <input type="datetime-local" class="form-control" id="dataHora" formControlName="DuracaoCampanha" />
+          </div>
         </div>
-        
-        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px;">
-            <div class="col-6">
-                <div class="mb-3">
-                   <label for="dataHora" class="form-label">Data e Hora</label>
-                   <input type="datetime-local" class="form-control" id="dataHora">
-                 </div>
-               </div>
-        </div>
-        
-    </div>
+      </div>
+
+      <div>
+        <button
+          id="btn-submit"
+          class="btn btn-warning"
+          type="submit"
+          style="color: #ffffff; font-weight: 500; margin-top: 15px"
+        >
+          PRÓXIMO
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 
+<ngx-spinner bdColor="rgba(225,225,225,0.8)" size="medium" color="#01616a" type="ball-circus" [fullScreen]="true"
+  ><div class="text-center">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ngx-spinner>

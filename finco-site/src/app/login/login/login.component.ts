@@ -47,14 +47,12 @@ export class LoginComponent implements OnInit {
       .login(this.request)
       .pipe(finalize(() => this.spinner.hide()))
       .subscribe({
-        next: (resp) => {
+        next: _ => {
           this.toastrService.success("Login realizado com sucesso!", "Sucesso!");
           this.router.navigate(["/home"]);
         },
         error: e => this.toastrService.error(e.error)
       });
-
-      this.router.navigate(["/home"]);
   }
 
   mudarTela(): void {

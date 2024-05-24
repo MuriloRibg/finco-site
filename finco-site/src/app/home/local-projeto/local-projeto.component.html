@@ -34,38 +34,40 @@
       </div>
       <div class="mb-3">
         <h1 style="font-size: 24px">Defina um local para o seu projeto</h1>
-        <p style="font-size: 16px">Escolha seu país de residência legal se estiver arrecadando fundos como pessoa física. Se você estiver arrecadando fundos para uma empresa ou organização sem fins lucrativos, selecione o país onde o número de identificação fiscal da entidade está registrado.</p>
+        <p style="font-size: 16px">
+          Escolha seu país de residência legal se estiver arrecadando fundos como pessoa física. Se você estiver
+          arrecadando fundos para uma empresa ou organização sem fins lucrativos, selecione o país onde o número de
+          identificação fiscal da entidade está registrado.
+        </p>
       </div>
 
-      <div class="row">
-       <div class="col-12">
-        <label for="categoria" style="margin-bottom: 10px;">País</label>
-        <select class="form-select" aria-label="Default select example" >
-          <option value="1" selected >Brasil</option>
-        </select>
+      <form [formGroup]="form" (submit)="enviar()">
+        <div class="row">
+          <div class="col-12">
+            <label for="categoria" style="margin-bottom: 10px">País</label>
+            <select class="form-select" aria-label="Default select example" formControlName="Local">
+              <option value="BR" selected>Brasil</option>
+            </select>
+          </div>
         </div>
-      </div>
 
-        
         <div class="d-grid gap-2">
           <button
             id="btn-submit"
             class="btn btn-warning"
             type="submit"
-            style="color: #ffffff; font-weight: 500; margin-top: 15px;"
-            (click)="mudarProjeto()"
+            style="color: #ffffff; font-weight: 500; margin-top: 15px"
           >
-            PRÓXIMO 
+            PRÓXIMO
           </button>
         </div>
 
-      <div class="mb-3" style="margin-top: 5%; text-align: center;">
-        <a  style="text-decoration: none; cursor: pointer" (click)="mudarTela()"
-          ><span style="font-size: 16px; color: #453f3f; font-weight: 500;">VOLTAR</span></a
-        >
-      </div>
+        <div class="mb-3" style="margin-top: 5%; text-align: center">
+          <a style="text-decoration: none; cursor: pointer" (click)="mudarTela()"
+            ><span style="font-size: 16px; color: #453f3f; font-weight: 500">VOLTAR</span></a
+          >
+        </div>
+      </form>
     </div>
   </div>
 </div>
-
-

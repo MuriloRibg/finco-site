@@ -8,14 +8,11 @@ import { VerificacaoModule } from "src/app/login/verificacao/verificacao.module"
 import { CriarSenhaModule } from "src/app/login/criar-senha/criar-senha.module";
 import { EsqueciSenhaModule } from "src/app/login/esqueci-senha/esqueci-senha.module";
 import { CriarContaModule } from "src/app/login/criar-conta/criar-conta.module";
-import { HomeComponent } from './home/home.component';
-import { CriarProjetoComponent } from './home/criar-projeto/criar-projeto.component';
-import { SubcategoriaComponent } from './home/subcategoria/subcategoria.component';
-import { LocalProjetoComponent } from './home/local-projeto/local-projeto.component';
-import { ProjetoComponent } from './home/projeto/projeto.component';
+import { HomeModule } from "src/app/home/home.module";
+import { CoreModule } from "src/app/core/core.module";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, CriarProjetoComponent, SubcategoriaComponent, LocalProjetoComponent, ProjetoComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     LoginModule,
@@ -23,7 +20,9 @@ import { ProjetoComponent } from './home/projeto/projeto.component';
     CriarSenhaModule,
     EsqueciSenhaModule,
     CriarContaModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
