@@ -13,14 +13,11 @@ import { TokenService } from "src/app/core/token/token.service";
 export class LoginService {
   private readonly url = `${environment.api}/login`;
 
-  constructor(
-    private readonly http: HttpClient, 
-    private readonly tokenService: TokenService) 
-    {}
+  constructor(private readonly http: HttpClient, private readonly tokenService: TokenService) {}
 
-  login(request: LoginRequest): Observable<LoginResponse> {
+  login(request: LoginRequest){
     return this.http
-      .post<LoginResponse>(this.url, request)
-      .pipe(tap(resp => this.tokenService.setToken(resp.data.token)));
+      .post<LoginResponse>(this.url, request as {}, { observe: "response" })
+      .pipe(tap(resp => this.tokenService.setToken(resp.body?.data.token ?? "")));
   }
 }

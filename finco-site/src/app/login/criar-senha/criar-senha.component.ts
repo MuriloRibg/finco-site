@@ -45,6 +45,7 @@ export class CriarSenhaComponent implements OnInit {
     let email = window.localStorage.getItem("email");
     let password = this.form.get("password")?.value;
 
+    debugger;
     this.request.Code = codigo;
     this.request.Email = email;
     this.request.Password = password;

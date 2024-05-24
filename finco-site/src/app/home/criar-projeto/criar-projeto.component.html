@@ -32,50 +32,60 @@
           <div class="progress-bar bg-warning" style="width: 33.3%"></div>
         </div>
       </div>
-      <div class="mb-3">
-        <h1 style="font-size: 24px">Primeiro, vamos preparar você</h1>
-        <p style="font-size: 16px">Selecione uma categoria principal e uma subcategoria para seu novo projeto</p>
-        <p style="font-size: 14px; margin-top: -14px; font-weight: 500;">Isso ajudará os patrocinadores encontrarem o seu projeto!</p>
-      </div>
 
-      <div class="row">
-       <div class="col-6">
-        <label for="categoria" style="margin-bottom: 10px;">Categoria</label>
-        <select class="form-select" aria-label="Default select example" >
-          <option selected >Selecione uma categoria</option>
-          <option value="1">Tecnologia</option>
-        </select>
-       </div>
-       <div class="col-6">
-        <label for="subcategoria" style="margin-bottom: 10px;">Subcategoria</label>
-        <select class="form-select" aria-label="Default select example">
-          <option selected >Selecione uma subcategoria</option>
-          <option value="1">Software</option>
-          <option value="2">Aplicativos</option>
-        </select>
-       </div>
-      </div>
+      <form [formGroup]="form" (submit)="enviar()">
+        <div class="mb-3">
+          <h1 style="font-size: 24px">Primeiro, vamos preparar você</h1>
+          <p style="font-size: 16px">Selecione uma categoria principal e uma subcategoria para seu novo projeto</p>
+          <p style="font-size: 14px; margin-top: -14px; font-weight: 500">
+            Isso ajudará os patrocinadores encontrarem o seu projeto!
+          </p>
+        </div>
 
-        
+        <div class="row">
+          <div class="col-6">
+            <label for="categoria" style="margin-bottom: 10px">Categoria</label>
+            <select class="form-select" aria-label="Default select example" formControlName="Categoria">
+              <option selected>Selecione uma categoria</option>
+              <option value="Tecnologia">Tecnologia</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <label for="subcategoria" style="margin-bottom: 10px">Subcategoria</label>
+            <select class="form-select" aria-label="Default select example" formControlName="SubCategoria">
+              <option selected>Selecione uma subcategoria</option>
+              <option value="Software">Software</option>
+              <option value="Aplicativos">Aplicativos</option>
+            </select>
+          </div>
+        </div>
+
         <div class="d-grid gap-2">
           <button
             id="btn-submit"
             class="btn btn-warning"
             type="submit"
-            style="color: #ffffff; font-weight: 500; margin-top: 15px;"
-            (click)="mudaTelaProx()"
+            style="color: #ffffff; font-weight: 500; margin-top: 15px"
           >
-            PRÓXIMO 
+            PRÓXIMO
           </button>
         </div>
 
-      <div class="mb-3" style="margin-top: 5%; text-align: center;">
-        <a  style="text-decoration: none; cursor: pointer" (click)="mudarTelaHome()"
-          ><span style="font-size: 16px; color: #453f3f; font-weight: 500;">VOLTAR</span></a
-        >
-      </div>
+        <div class="mb-3" style="margin-top: 5%; text-align: center">
+          <a style="text-decoration: none; cursor: pointer" (click)="mudarTelaHome()"
+            ><span style="font-size: 16px; color: #453f3f; font-weight: 500">VOLTAR</span></a
+          >
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
 
+<ngx-spinner bdColor="rgba(225,225,225,0.8)" size="medium" color="#01616a" type="ball-circus" [fullScreen]="true"
+  ><div class="text-center">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ngx-spinner>
