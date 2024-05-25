@@ -10,10 +10,26 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { ToastrModule } from "ngx-toastr";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RequestInterceptor } from "src/app/core/auth/request.interceptor";
+import { InicioComponent } from "./inicio/inicio.component";
+import { SharedModule } from "src/app/shared/shared.module";
 
 @NgModule({
-  declarations: [HomeComponent, CriarProjetoComponent, SubcategoriaComponent, LocalProjetoComponent, ProjetoComponent],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, NgxSpinnerModule.forRoot(), ToastrModule.forRoot()],
+  declarations: [
+    HomeComponent,
+    CriarProjetoComponent,
+    SubcategoriaComponent,
+    LocalProjetoComponent,
+    ProjetoComponent,
+    InicioComponent
+  ],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxSpinnerModule.forRoot(),
+    ToastrModule.forRoot(),
+    SharedModule
+  ],
   exports: [HomeComponent, CriarProjetoComponent, SubcategoriaComponent, LocalProjetoComponent, ProjetoComponent],
   providers: [
     {

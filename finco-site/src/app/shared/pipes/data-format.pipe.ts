@@ -12,6 +12,7 @@ export class Constants {
 export class DateFormatPipe implements PipeTransform {
   public format!: string;
   private readonly datePipe: DatePipe;
+  
   constructor() {
     this.datePipe = new DatePipe("pt-Br");
   }

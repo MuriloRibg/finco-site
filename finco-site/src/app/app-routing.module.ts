@@ -11,6 +11,7 @@ import { CriarProjetoComponent } from "./home/criar-projeto/criar-projeto.compon
 import { SubcategoriaComponent } from "./home/subcategoria/subcategoria.component";
 import { LocalProjetoComponent } from "./home/local-projeto/local-projeto.component";
 import { ProjetoComponent } from "./home/projeto/projeto.component";
+import { InicioComponent } from "src/app/home/inicio/inicio.component";
 
 const routes: Routes = [
   {
@@ -44,12 +45,10 @@ const routes: Routes = [
     path: "criar-conta",
     component: CriarContaComponent
   },
-
   {
     path: "criarProjeto",
     component: CriarProjetoComponent
   },
-
   {
     path: "home",
     component: HomeComponent
@@ -66,8 +65,10 @@ const routes: Routes = [
     path: "projeto",
     component: ProjetoComponent
   },
-
-
+  {
+    path: "inicio",
+    component: InicioComponent
+  }
 ];
 
 @NgModule({

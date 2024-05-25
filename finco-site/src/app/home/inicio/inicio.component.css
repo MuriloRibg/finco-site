@@ -1,0 +1,39 @@
+
+.card-largura {
+    max-width: 18rem;
+}
+
+.cor-especial {
+    color: darkred;
+}
+
+.botao-cor-especial {
+    background-color: darkred;
+    color: white;
+}
+
+.bordar-cor-especial {
+    border-color: darkred;
+}
+
+.botao-cor-especial:hover {
+    background-color: rgb(184, 75, 75);
+    color: white;
+}
+
+.card-posicao-imagem {
+    object-fit: cover; /* vai preencher o seu contener, preservando a proporção */
+    height: 200px;
+}
+
+#imagem-colunas{
+    width: 100vw;
+}
+
+.colored-text {
+    background-color: #ffac4f;
+    color: #fff;
+    padding: 5px;
+    border-radius: 15px;
+    width: fit-content;
+}
