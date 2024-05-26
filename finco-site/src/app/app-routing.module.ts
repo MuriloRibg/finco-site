@@ -64,10 +64,6 @@ const routes: Routes = [
   {
     path: "projeto",
     component: ProjetoComponent
-  },
-  {
-    path: "inicio",
-    component: InicioComponent
   }
 ];
 

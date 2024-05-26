@@ -1,4 +1,3 @@
-<!-- Cards -->
 <main>
   <section id="carrossel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-inner">
@@ -14,27 +13,24 @@
     </div>
   </section>
 
-    <section id="receitas" class="container col-12 mt-5">
-      <div class="row justify-content-center">
-        <h2>Projetos populares</h2>
-        <article
-          *ngFor="let projeto of response"
-          class="card shadow p-0 m-2 col-3 col-md-3 col-lg-3 col-xl-4"
-          style="width: 18rem"
-        >
-          <img
-            src="../../../assets/Inicio/card-img.png"
-            alt="Capa do projeto"
-            class="card-img-top card-posicao-imagem"
-          />
-          <div class="card-body">
-            <p class="colored-text">{{projeto.Categoria}}</p>
-            <h5 class="card-title">{{ projeto.Titulo }}</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">{{ projeto.UserName }}</h6>
-            <p class="card-text">35 dias - 65% financiamento</p>
-            <a href="#" class="btn btn-outline-warning w-100">VISITAR PROJETO</a>
-          </div>
-        </article>
-      </div>
-    </section>
+  <!-- Cards -->
+  <section id="receitas" class="container col-12 mt-5">
+    <div class="row justify-content-center">
+      <h2 class="m-3">Projetos populares</h2>
+      <article
+        *ngFor="let projeto of response"
+        class="card shadow p-0 m-2 col-3 col-md-3 col-lg-3 col-xl-4"
+        style="width: 18rem"
+      >
+        <img src="../../../assets/Inicio/card-img.png" alt="Capa do projeto" class="card-img-top card-posicao-imagem" />
+        <div class="card-body">
+          <p class="colored-text">{{ projeto.Categoria }}</p>
+          <h5 class="card-title">{{ projeto.Titulo }}</h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary">{{ projeto.UserName }}</h6>
+          <p class="card-text"><i class="bi bi-clock text-warning"></i> 35 dias - 65% financiamento</p>
+          <a href="#" class="btn btn-outline-warning w-100">VISITAR PROJETO</a>
+        </div>
+      </article>
+    </div>
+  </section>
 </main>
