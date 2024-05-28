@@ -15,22 +15,36 @@
 
   <!-- Cards -->
   <section id="receitas" class="container col-12 mt-5">
-    <div class="row justify-content-center">
-      <h2 class="m-3">Projetos populares</h2>
-      <article
-        *ngFor="let projeto of response"
-        class="card shadow p-0 m-2 col-3 col-md-3 col-lg-3 col-xl-4"
-        style="width: 18rem"
-      >
-        <img src="../../../assets/Inicio/card-img.png" alt="Capa do projeto" class="card-img-top card-posicao-imagem" />
-        <div class="card-body">
-          <p class="colored-text">{{ projeto.Categoria }}</p>
-          <h5 class="card-title">{{ projeto.Titulo }}</h5>
-          <h6 class="card-subtitle mb-2 text-body-secondary">{{ projeto.UserName }}</h6>
-          <p class="card-text"><i class="bi bi-clock text-warning"></i> 35 dias - 65% financiamento</p>
-          <a href="#" class="btn btn-outline-warning w-100">VISITAR PROJETO</a>
+    <h2 class="m-3">Projetos populares</h2>
+    <div class="row">
+      <div class="col" *ngFor="let projeto of response; trackBy: trackTipo">
+        <div class="card shadow p-0 m-2 col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3" style="width: 18rem">
+          <img
+            src="../../../assets/Inicio/card-img.png"
+            alt="Capa do projeto"
+            class="card-img-top card-posicao-imagem"
+          />
+          <div class="card-body">
+            <p class="colored-text">{{ projeto.category }}</p>
+            <h5 class="card-title">{{ projeto.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">{{ projeto.username }}</h6>
+            <p class="card-text">
+              <i class="bi bi-clock text-warning"></i> {{ getQuantidadeDiasCriacao(projeto.rollout_date) }} dias - {{getPorcentagemValorNecessario(projeto.funded_value, projeto.required_value)}}%
+              financiamento
+            </p>
+            <a href="#" class="btn btn-outline-warning w-100">VISITAR PROJETO</a>
+          </div>
         </div>
-      </article>
+
+      </div>
     </div>
   </section>
 </main>
+
+<ngx-spinner bdColor="rgba(225,225,225,0.8)" size="medium" color="#01616a" type="ball-circus" [fullScreen]="true"
+  ><div class="text-center">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ngx-spinner>

@@ -1,14 +1,23 @@
-export class ProjetoResponse {
-    Id!: Number; 
-    Titulo!: String;
-    UserName!: String;
-    DataFinal!: Date
-    Categoria!: String; 
+export interface ProjetoResponse {
+  ID: number;
+  category: string;
+  sub_category_1: string;
+  sub_category_2: string;
+  country: string;
+  title: string;
+  description: string;
+  end_date: Date | string | null;
+  required_value: number;
+  rollout_date: Date | string | null;
+  funded_value: number;
+  image: string;
+  username: string;
+}
 
-    constructor(titulo: String, userName: String, dataFinal: Date, categoria: String) {
-        this.Titulo = titulo;
-        this.UserName = userName;
-        this.DataFinal = dataFinal;
-        this.Categoria = categoria;
-    }
+export class DataProjectsResponse {
+  data!: ListProjectsResponse;
+}
+
+export class ListProjectsResponse {
+  projects!: ProjetoResponse[];
 }
