@@ -46,32 +46,31 @@
     </div>
 
     <div class="mt-4">
-        <div class="card text-center">
-            <div class="card-header">
-              <ul class="nav nav-tabs card-header-tabs">
-                <li class="nav-item">
-                  <a class="nav-link" [class.active]="activeTab === 'historia'" (click)="setActiveTab('historia')" aria-current="true" >História</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" [class.active]="activeTab === 'recompensas'" (click)="setActiveTab('recompensas')" >Recompensas</a>
-                </li>
-              </ul>
-            </div>
-            <div class="card-body">
-              <div *ngIf="activeTab === 'historia'">
-                <p class="card-text">{{ projeto?.description }}</p>
-                <div class="image-grid">
-                  <div *ngFor="let image of images">
-                    <img [src]="image.url" class="img-fluid custom-image" alt="Imagem" />
-                  </div>
-                </div>
-              </div>
-              <div *ngIf="activeTab === 'recompensas'">
-                <p class="card-text">Conteúdo das Recompensas</p>
-                
+      <div class="card text-center">
+        <div class="card-header">
+          <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeTab === 'historia'" (click)="setActiveTab('historia')" aria-current="true" >História</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [class.active]="activeTab === 'recompensas'" (click)="setActiveTab('recompensas')" >Recompensas</a>
+            </li>
+          </ul>
+        </div>
+        <div class="card-body">
+          <div *ngIf="activeTab === 'historia'">
+            <p class="card-text">{{ projeto?.description }}</p>
+            <div class="image-grid">
+              <div *ngFor="let image of images">
+                <img [src]="image.url" class="img-fluid custom-image" alt="Imagem" />
               </div>
             </div>
           </div>
+          <div *ngIf="activeTab === 'recompensas'">
+            
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </div>

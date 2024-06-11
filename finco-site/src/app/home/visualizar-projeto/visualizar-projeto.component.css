@@ -42,3 +42,33 @@ strong{
     height: auto;
     border-radius: 10px;
 }
+
+.nav-tabs {
+    border-bottom: 1px solid #ddd;
+  }
+  
+.nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+.nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    cursor: pointer;
+    color: #6c757d;
+    font-weight: 500;
+  }
+  
+.nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+    border-bottom: 2px solid #fe9923;
+  }
+  
+.card-header-tabs {
+    display: flex;
+    justify-content: space-around;
+  }
