@@ -46,7 +46,7 @@ export class InicioComponent implements OnInit {
     if (data === null || data === undefined) return 0;
     const diaConsulta = new Date(data);
     const diaAtual: Date = new Date();
-    const diferenca = diaAtual.getTime() - diaConsulta.getTime();
+    const diferenca = diaConsulta.getTime() - diaAtual.getTime();
     const dias = Math.round(diferenca / (1000 * 60 * 60 * 24));
     console.log(dias);
     return dias;
