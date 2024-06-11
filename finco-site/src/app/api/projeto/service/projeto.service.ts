@@ -7,6 +7,7 @@ import { environment } from "src/environments/environment";
 
 const url = environment.api;
 
+
 @Injectable({
   providedIn: "root"
 })
@@ -23,5 +24,9 @@ export class ProjetoService {
 
   recuperar(id: number): Observable<DataProjectResponse> {
     return this.httpClient.get<DataProjectResponse>(`${url}/project/${id}`);
+  }
+
+  doar(id: number, amount: number, transaction_id: string): Observable<any> {
+    return this.httpClient.post(`${url}/project/donate/${id}`, {"amount": amount, "transaction_id": transaction_id});
   }
 }
