@@ -1,0 +1,145 @@
+<app-header></app-header>
+
+<div style="background-color: #f9f9f9; padding-bottom: 150px">
+  <div class="row" style="margin: 0; padding-top: 30px; padding-bottom: 30px">
+    
+  
+  <div class="mx-auto p-2" style="width: 80%; background-color: #ffffff; border-radius: 16px">
+    <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px">
+      <h4 style="margin-bottom: 10px">Escolha como irá ajudar</h4>
+      
+    </div>
+
+    <form>
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px">
+        <div class="col-6">
+            <div class="mb-3">
+              <label for="meta" class="form-label">Digite o valor que será doado</label>
+              <input type="text" class="form-control" id="meta" placeholder="Valor" formControlName="Valor" />
+            </div>
+          </div>
+      </div>
+
+
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-6">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Crédito / Débito
+                </label>
+            </div>
+        </div>
+      </div>
+
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="numeroCartao" class="form-label">Número do cartão (Conforme aparece no cartão)</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numeroCartao"
+                  formControlName="numeroCartao"
+                />
+              </div>
+        </div>
+
+        <div class="col-6">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome completo</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  formControlName="Nome"
+                />
+              </div>
+        </div>
+      </div>
+
+      <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="data" class="form-label">Data de vencimento</label>
+                <input type="date" class="form-control" id="data" formControlName="DataLancamento" />
+              </div>
+        </div>
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="codigoSeguranca" class="codigoSeguranca">Código de Segurança (CVV)</label>
+                <input
+                  type="number"
+                  [maxLength]="3"
+                  class="form-control"
+                  id="codigoSeguranca"
+                  formControlName="codigoSeguranca"
+                />
+              </div>
+        </div>
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="cpf" class="cpf">CPF do titular do cartão</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cpf"
+                  formControlName="CPF"
+                />
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px; display: flex;">
+            <div class="col-12">
+                <div class="col-6">
+                   
+                  
+                      <button
+                        id="btn-submit"
+                        class="btn btn-outline-warning"
+                        type="submit"
+                        style=" font-weight: 500; margin-top: 15px;margin-right: 20px;"
+                        (click)="mudarTelaVizualizarProjeto()"
+                      >
+                        Cancelar
+                      </button>
+                    
+                    
+                
+
+                
+                    
+                  
+                      <button
+                        id="btn-submit"
+                        class="btn btn-warning"
+                        type="submit"
+                        style="color: #ffffff; font-weight: 500; margin-top: 15px"
+                        (click)="mudarTelaHome()"
+                      >
+                        Finalizar compra
+                      </button>
+                    
+                    </div>
+                
+            </div>
+
+        </div>
+      </div>    
+    </form>
+  </div>
+
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+<ngx-spinner bdColor="rgba(225,225,225,0.8)" size="medium" color="#01616a" type="ball-circus" [fullScreen]="true"
+  ><div class="text-center">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ngx-spinner>

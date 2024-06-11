@@ -13,6 +13,7 @@ import { RequestInterceptor } from "src/app/core/auth/request.interceptor";
 import { InicioComponent } from "./inicio/inicio.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { VisualizarProjetoComponent } from './visualizar-projeto/visualizar-projeto.component';
+import { ApoieProjetoComponent } from './apoie-projeto/apoie-projeto.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { VisualizarProjetoComponent } from './visualizar-projeto/visualizar-proj
     LocalProjetoComponent,
     ProjetoComponent,
     InicioComponent,
-    VisualizarProjetoComponent
+    VisualizarProjetoComponent,
+    ApoieProjetoComponent
   ],
   imports: [
     CommonModule,

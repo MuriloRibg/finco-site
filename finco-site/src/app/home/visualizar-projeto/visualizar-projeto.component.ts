@@ -85,4 +85,13 @@ export class VisualizarProjetoComponent implements OnInit {
     if (valor == null || valorTotal == null) return 0;
     return (valor / valorTotal) * 100;
   }
+
+  mudarTelaApoieProjeto(): void{
+    this.router.navigate(["/apoie-projeto"], {
+      queryParams:{
+        idProjeto: this.idProjeto
+      }
+    });
+  }
+
 }
