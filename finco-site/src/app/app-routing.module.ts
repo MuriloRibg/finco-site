@@ -13,6 +13,7 @@ import { LocalProjetoComponent } from "./home/local-projeto/local-projeto.compon
 import { ProjetoComponent } from "./home/projeto/projeto.component";
 import { InicioComponent } from "src/app/home/inicio/inicio.component";
 import { VisualizarProjetoComponent } from "src/app/home/visualizar-projeto/visualizar-projeto.component";
+import { ApoieProjetoComponent } from "./home/apoie-projeto/apoie-projeto.component";
 
 const routes: Routes = [
   {
@@ -69,6 +70,10 @@ const routes: Routes = [
   {
     path: "visualizar-projeto",
     component: VisualizarProjetoComponent
+  },
+  {
+    path: "apoie-projeto",
+    component: ApoieProjetoComponent
   }
 ];
 
