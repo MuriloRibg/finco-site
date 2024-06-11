@@ -31,6 +31,12 @@ export class VisualizarProjetoComponent implements OnInit {
     this.consultarProjeto();
   }
 
+  activeTab: string = 'historia';
+
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
+
   mudarTelaProjeto(): void {
     this.router.navigate(["/criarProjeto"]);
   }
