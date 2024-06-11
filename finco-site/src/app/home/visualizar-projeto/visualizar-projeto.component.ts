@@ -17,6 +17,7 @@ export class VisualizarProjetoComponent implements OnInit {
   projeto?: ProjetoResponse;
   images?: ProjectImageResponse[];
   primeiraImagem?: string;
+  rewards?: any;
 
   constructor(
     private readonly router: Router,
@@ -84,7 +85,7 @@ export class VisualizarProjetoComponent implements OnInit {
     const diferenca = diaAtual.getTime() - diaConsulta.getTime();
     const dias = Math.round(diferenca / (1000 * 60 * 60 * 24));
     console.log(dias);
-    return dias;
+    return dias * -1;
   }
 
   getPorcentagemValorNecessario(valor: number, valorTotal: number): Number {

@@ -36,7 +36,7 @@
               </p>
               <div>
                 <h6 class="card-text">{{ getQuantidadeDiasCriacao(projeto?.rollout_date) }}</h6>
-                <p>Dias que faltam</p>
+                <p>Dias restantes</p>
               </div>
               <button class="btn btn-primary mb-2 w-100 shadow">Apoie esse projeto</button>
             </div>
@@ -67,7 +67,14 @@
             </div>
           </div>
           <div *ngIf="activeTab === 'recompensas'">
-            
+            <div class="rewards-grid">
+              <div *ngFor="let reward of rewards" class="reward-card">
+                <img [src]="reward.imageUrl" class="img-fluid reward-image" alt="Recompensa" />
+                <h5>{{ reward.title }}</h5>
+                <p>{{ reward.description }}</p>
+                <button class="btn btn-outline-warning">{{ reward.buttonText }}</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
