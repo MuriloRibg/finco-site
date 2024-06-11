@@ -10,7 +10,7 @@
       
     </div>
 
-    <form>
+    <form [formGroup]="form">
       <div class="row" style="padding-top: 19x; padding-left: 19px; padding-right: 19px">
         <div class="col-6">
             <div class="mb-3">
@@ -62,7 +62,7 @@
         <div class="col-4">
             <div class="mb-3">
                 <label for="data" class="form-label">Data de vencimento</label>
-                <input type="date" class="form-control" id="data" formControlName="DataLancamento" />
+                <input type="date" class="form-control" id="data" formControlName="DataVencimento" />
               </div>
         </div>
 

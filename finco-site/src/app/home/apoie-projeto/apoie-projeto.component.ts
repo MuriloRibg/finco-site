@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjetoService } from 'src/app/api/projeto/service/projeto.service';
 
@@ -9,7 +10,9 @@ import { ProjetoService } from 'src/app/api/projeto/service/projeto.service';
 })
 export class ApoieProjetoComponent {
   idProjeto!: number;
-  constructor(
+  form!: FormGroup;
+    constructor(
+      private readonly formBuilder: FormBuilder,
     private readonly router: Router,
     private readonly route: ActivatedRoute,
     private readonly projetoService: ProjetoService,
@@ -21,6 +24,7 @@ export class ApoieProjetoComponent {
 
   ngOnInit(): void {
     this.getParamsValue();
+    this.iniciarFormulario();
   }
 
   getParamsValue() {
@@ -44,9 +48,23 @@ export class ApoieProjetoComponent {
     }
     return result;
   }
+
+  iniciarFormulario(): void {
+    this.form = this.formBuilder.group({
+      Valor: [0, Validators.required],
+      codigoSeguranca: ['', Validators.required],
+      numeroCartao: ['', Validators.required],
+      CPF: ['', Validators.required],
+      DataVencimento: [null],
+      Nome: ['', Validators.required]
+      });
+  }
   
   doar(): void {
-    this.projetoService.doar(this.idProjeto, 100, this.gerarStringAleatoria(20)).subscribe({
+    if (!this.form.get("Valor")?.value) {
+        return;
+    }
+    this.projetoService.doar(this.idProjeto, Number(this.form.get("Valor")?.value), this.gerarStringAleatoria(20)).subscribe({
       next: _ => {
         this.router.navigate(["/home"]);
       },
