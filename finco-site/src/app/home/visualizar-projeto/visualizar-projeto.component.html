@@ -1,0 +1,81 @@
+<app-header>
+  <button
+    class="btn btn-warning text-white"
+    type="submit"
+    (click)="mudarTelaProjeto()"
+    style="background-color: #fe9923; font-size: 16px; text-wrap: nowrap"
+  >
+    COMEÇAR UM PROJETO
+  </button>
+</app-header>
+
+<div class="body">
+  <main class="container">
+    <div class="card shadow">
+      <div class="card-body">
+        <h3 class="text-center">{{ projeto?.title }}</h3>
+        <p class="text-center">{{ projeto?.description }}</p>
+      </div>
+    </div>
+    <div class="mt-4">
+      <div class="card shadow mb-3">
+        <div class="row g-0 d-flex justify-content-betweer">
+          <div class="col-md-6">
+            <div class="d-flex justify-content-center align-items-center">
+              <img [src]="primeiraImagem" class="image-placeholder mt-3 mb-3" alt="Imagem do projeto" width="600px" />
+            </div>
+          </div>
+          <div
+            class="col-md-6"
+            style="display: flex; align-items: center; justify-content: space-around; flex-direction: column"
+          >
+            <div class="card-body" style="width: 90%">
+              <h2 class="card-title" style="color: #ff9823">R$ {{ projeto?.required_value }}</h2>
+              <p>
+                Já conquistado <strong>R$ {{ projeto?.funded_value }}</strong>
+              </p>
+              <div>
+                <h6 class="card-text">{{ getQuantidadeDiasCriacao(projeto?.rollout_date) }}</h6>
+                <p>Dias que faltam</p>
+              </div>
+              <button class="btn btn-primary mb-2 w-100 shadow">Apoie esse projeto</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-4">
+        <div class="card text-center">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="true" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </div>
+  </main>
+</div>
+
+<app-footer></app-footer>
+
+<ngx-spinner bdColor="rgba(225,225,225,0.8)" size="medium" color="#01616a" type="ball-circus" [fullScreen]="true"
+  ><div class="text-center">
+    <div class="spinner-border text-warning" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</ngx-spinner>

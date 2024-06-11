@@ -12,6 +12,7 @@ import { SubcategoriaComponent } from "./home/subcategoria/subcategoria.componen
 import { LocalProjetoComponent } from "./home/local-projeto/local-projeto.component";
 import { ProjetoComponent } from "./home/projeto/projeto.component";
 import { InicioComponent } from "src/app/home/inicio/inicio.component";
+import { VisualizarProjetoComponent } from "src/app/home/visualizar-projeto/visualizar-projeto.component";
 
 const routes: Routes = [
   {
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path: "projeto",
     component: ProjetoComponent
+  },
+  {
+    path: "visualizar-projeto",
+    component: VisualizarProjetoComponent
   }
 ];
 

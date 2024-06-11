@@ -144,7 +144,7 @@
         </p>
         <p style="margin-bottom: 10px">
           Sua imagem deve ter pelo menos 1024x576 pixels. Ele será cortado em uma proporção de 16:9.
-        </p>
+        </p>1
         <p style="margin-bottom: 10px">
           Evite imagens com banners, emblemas ou texto - eles são ilegíveis em tamanhos menores, podem ser penalizados
           pelo algoritmo do Facebook e diminuem suas chances de obter a página inicial da Finco e os recursos do boletim
@@ -157,7 +157,7 @@
         style="padding-top: 19x; padding-left: 19px; padding-right: 19px; margin-top: 30px"
       >
         <div class="col-12">
-          <input class="form-control form-control-lg" id="formFileLg" type="file" />
+          <input (change)="onFileSelected($event)" class="form-control form-control-lg" id="formFileLg" type="file"  formControlName="Imagem"/>
         </div>
       </div>
 

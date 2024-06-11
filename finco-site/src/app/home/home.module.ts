@@ -12,6 +12,7 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { RequestInterceptor } from "src/app/core/auth/request.interceptor";
 import { InicioComponent } from "./inicio/inicio.component";
 import { SharedModule } from "src/app/shared/shared.module";
+import { VisualizarProjetoComponent } from './visualizar-projeto/visualizar-projeto.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SharedModule } from "src/app/shared/shared.module";
     SubcategoriaComponent,
     LocalProjetoComponent,
     ProjetoComponent,
-    InicioComponent
+    InicioComponent,
+    VisualizarProjetoComponent
   ],
   imports: [
     CommonModule,

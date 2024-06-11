@@ -1,5 +1,5 @@
 export interface ProjetoResponse {
-  ID: number;
+  id: number;
   category: string;
   sub_category_1: string;
   sub_category_2: string;
@@ -18,6 +18,12 @@ export class DataProjectsResponse {
   data!: ListProjectsResponse;
 }
 
+export class DataProjectResponse {
+  data!: ProjetoResponse;
+}
+
 export class ListProjectsResponse {
   projects!: ProjetoResponse[];
 }
+
+

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
 import { ToastrService } from "ngx-toastr";
 import { finalize } from "rxjs";
@@ -16,7 +17,8 @@ export class InicioComponent implements OnInit {
   constructor(
     private readonly projetoService: ProjetoService,
     private readonly spinner: NgxSpinnerService,
-    private readonly toastrService: ToastrService
+    private readonly toastrService: ToastrService,
+    private readonly router: Router
   ) {}
 
   ngOnInit(): void {
@@ -57,5 +59,13 @@ export class InicioComponent implements OnInit {
   getPorcentagemValorNecessario(valor: number, valorTotal: number): Number {
     if (valor == null || valorTotal == null) return 0;
     return (valor / valorTotal) * 100;
+  }
+
+  irParaVisualizacao(id: number){
+    this.router.navigate(["/visualizar-projeto"], {
+      queryParams:{
+        idProjeto: id
+      }
+    });
   }
 }

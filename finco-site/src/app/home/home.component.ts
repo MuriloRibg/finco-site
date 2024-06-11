@@ -11,7 +11,6 @@ export class HomeComponent {
   constructor( private readonly router: Router){}
 
   mudarTelaProjeto(): void{
-
     this.router.navigate(["/criarProjeto"]);
   }
 }

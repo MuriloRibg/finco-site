@@ -1,0 +1,23 @@
+.body {
+    background-color: #f2f2f2;
+    background-image: url("../../../assets/fundoAtual.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    padding-bottom: 50px ;
+    padding-top: 50px ;
+}
+
+.card{
+    border-radius: 20px !important;
+}
+  
+strong{
+    color: #ff9823;
+}
+
+.btn-primary{
+    background-color: #ff9823;
+    border-color: #f2f2f2;
+}
